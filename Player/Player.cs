@@ -34,7 +34,7 @@ public class Player : KinematicBody2D
         animationTree.Set("parameters/Idle/blend_position", input_vector);
         animationTree.Set("parameters/Run/blend_position", input_vector);
         animationState.Travel("Run");
-        
+
         velocity = velocity.MoveToward(input_vector * MaxSpeed, Acceleration * delta);
 
     } else
@@ -42,7 +42,7 @@ public class Player : KinematicBody2D
         animationState.Travel("Idle");
         velocity = velocity.MoveToward(Vector2.Zero, Friction * delta);
     }
-      GD.Print(velocity);
+      
       velocity = MoveAndSlide(velocity);
   }
 }
